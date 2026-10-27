@@ -1,0 +1,32 @@
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    string data;
+
+    
+    cout << "Enter some data: ";
+    getline(cin, data);
+
+   
+    ofstream outfile("data.txt");
+    outfile << data;
+    outfile.close();
+
+    cout << "Data written to the file successfully." << endl;
+
+    
+    ifstream infile("data.txt");
+    string content;
+
+    getline(infile, content);
+    infile.close();
+
+    
+    cout << "Data read from the file: " << content << endl;
+
+    return 0;
+}
